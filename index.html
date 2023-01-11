@@ -24,11 +24,23 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>framer-motion-morph-svg-background</title>
+    <script>
+			document.documentElement.className = 'js';
+			var supportsCssVars = function() {
+				var s = document.createElement('style'),
+				support;
+				s.innerHTML = "root: { --tmp-var: bold; }";
+				document.head.appendChild(s);
+				support = !!(window.CSS && window.CSS.supports && window.CSS.supports('font-weight', 'var(--tmp-var)'));
+				s.parentNode.removeChild(s);
+				return support;
+			}
+			if (!supportsCssVars()) alert('Please view this demo in a modern browser that supports CSS Variables.')
+		</script>
+    <title>Framer Motion Morph SVG Background</title>
   </head>
-  <body>
+  <body class="demo-1 loading">
     <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="modal-root" data-testid="modal-root"></div>
     <div id="root"></div>
     <script type="module" src="/src/index.tsx"></script>
     <!--
