@@ -10,6 +10,7 @@ Object {
       >
         <svg
           class="Hidden"
+          data-testid="Hidden"
         >
           <symbol
             id="icon-arrow"
@@ -50,6 +51,7 @@ Object {
         </svg>
         <div
           class="morph-wrap"
+          data-testid="morph-wrap"
         >
           <svg
             class="morph"
@@ -64,6 +66,7 @@ Object {
         </div>
         <div
           class="content content--fixed"
+          data-testid="Content"
         >
           <header
             class="codrops-header"
@@ -111,6 +114,7 @@ Object {
             </div>
             <h1
               class="codrops-header__title"
+              data-testid="codrops-header__title"
             >
               Morphing Background Shapes
             </h1>
@@ -120,6 +124,7 @@ Object {
           >
             <a
               class="demo"
+              data-testid="demo-1"
               href="index.html"
             >
               <svg
@@ -134,6 +139,7 @@ Object {
             </a>
             <a
               class="demo demo--current"
+              data-testid="demo-2"
               href="index2.html"
             >
               <svg
@@ -147,6 +153,7 @@ Object {
             </a>
             <a
               class="demo"
+              data-testid="demo-3"
               href="index3.html"
             >
               <svg
@@ -176,21 +183,25 @@ Object {
             <img
               alt="HelloSign API"
               class="pater__img"
+              data-testid="pater__img"
               src="[object Object]"
             />
             <h4
               class="pater__title"
+              data-testid="pater__title"
             >
               2x Faster Integration Time
             </h4>
             <p
               class="pater__desc"
+              data-testid="pater__desc"
             >
               Embed contracts and agreements into your site or app with a few lines of code.
             </p>
           </a>
           <div
             class="deco deco--title"
+            data-testid="deco__title"
           >
             2017 Westland Exhibition Center
           </div>
@@ -200,29 +211,35 @@ Object {
         >
           <div
             class="content content--layout content--layout-0"
+            data-testid="content--layout"
           >
             <img
               alt="Some image"
               class="content__img"
+              data-testid="content__img"
               src="test-file-stub"
             />
             <h3
               class="content__title"
+              data-testid="content__title"
             >
               found
             </h3>
             <p
               class="content__author"
+              data-testid="content__author"
             >
               Jane Westhall
             </p>
             <p
               class="content__desc"
+              data-testid="content__desc"
             >
               Lost or found? That's the question today.
             </p>
             <a
               class="content__link"
+              data-testid="content__link"
               href="#"
             >
               Discover
@@ -234,29 +251,35 @@ Object {
         >
           <div
             class="content content--layout content--layout-1"
+            data-testid="content--layout"
           >
             <img
               alt="Some image"
               class="content__img"
+              data-testid="content__img"
               src="test-file-stub"
             />
             <h3
               class="content__title"
+              data-testid="content__title"
             >
               bunch
             </h3>
             <p
               class="content__author"
+              data-testid="content__author"
             >
               Nikimo Westlane
             </p>
             <p
               class="content__desc"
+              data-testid="content__desc"
             >
               The neverending quest, once and forever.
             </p>
             <a
               class="content__link"
+              data-testid="content__link"
               href="#"
             >
               Discover
@@ -268,29 +291,35 @@ Object {
         >
           <div
             class="content content--layout content--layout-2"
+            data-testid="content--layout"
           >
             <img
               alt="Some image"
               class="content__img"
+              data-testid="content__img"
               src="test-file-stub"
             />
             <h3
               class="content__title"
+              data-testid="content__title"
             >
               revert
             </h3>
             <p
               class="content__author"
+              data-testid="content__author"
             >
               Gregory Mourisha
             </p>
             <p
               class="content__desc"
+              data-testid="content__desc"
             >
               Finding the heart when paradise is lost.
             </p>
             <a
               class="content__link"
+              data-testid="content__link"
               href="#"
             >
               Discover
@@ -302,29 +331,35 @@ Object {
         >
           <div
             class="content content--layout content--layout-3"
+            data-testid="content--layout"
           >
             <img
               alt="Some image"
               class="content__img"
+              data-testid="content__img"
               src="test-file-stub"
             />
             <h3
               class="content__title"
+              data-testid="content__title"
             >
               east
             </h3>
             <p
               class="content__author"
+              data-testid="content__author"
             >
               Walter Mastricht
             </p>
             <p
               class="content__desc"
+              data-testid="content__desc"
             >
               The outer bounds of the world, from within.
             </p>
             <a
               class="content__link"
+              data-testid="content__link"
               href="#"
             >
               Discover
@@ -336,29 +371,35 @@ Object {
         >
           <div
             class="content content--layout content--layout-4"
+            data-testid="content--layout"
           >
             <img
               alt="Some image"
               class="content__img"
+              data-testid="content__img"
               src="test-file-stub"
             />
             <h3
               class="content__title"
+              data-testid="content__title"
             >
               frank
             </h3>
             <p
               class="content__author"
+              data-testid="content__author"
             >
               Frank Cherry
             </p>
             <p
               class="content__desc"
+              data-testid="content__desc"
             >
               Frank's work and nothing more.
             </p>
             <a
               class="content__link"
+              data-testid="content__link"
               href="#"
             >
               Discover
@@ -374,6 +415,7 @@ Object {
     >
       <svg
         class="Hidden"
+        data-testid="Hidden"
       >
         <symbol
           id="icon-arrow"
@@ -414,6 +456,7 @@ Object {
       </svg>
       <div
         class="morph-wrap"
+        data-testid="morph-wrap"
       >
         <svg
           class="morph"
@@ -428,6 +471,7 @@ Object {
       </div>
       <div
         class="content content--fixed"
+        data-testid="Content"
       >
         <header
           class="codrops-header"
@@ -475,6 +519,7 @@ Object {
           </div>
           <h1
             class="codrops-header__title"
+            data-testid="codrops-header__title"
           >
             Morphing Background Shapes
           </h1>
@@ -484,6 +529,7 @@ Object {
         >
           <a
             class="demo"
+            data-testid="demo-1"
             href="index.html"
           >
             <svg
@@ -498,6 +544,7 @@ Object {
           </a>
           <a
             class="demo demo--current"
+            data-testid="demo-2"
             href="index2.html"
           >
             <svg
@@ -511,6 +558,7 @@ Object {
           </a>
           <a
             class="demo"
+            data-testid="demo-3"
             href="index3.html"
           >
             <svg
@@ -540,21 +588,25 @@ Object {
           <img
             alt="HelloSign API"
             class="pater__img"
+            data-testid="pater__img"
             src="[object Object]"
           />
           <h4
             class="pater__title"
+            data-testid="pater__title"
           >
             2x Faster Integration Time
           </h4>
           <p
             class="pater__desc"
+            data-testid="pater__desc"
           >
             Embed contracts and agreements into your site or app with a few lines of code.
           </p>
         </a>
         <div
           class="deco deco--title"
+          data-testid="deco__title"
         >
           2017 Westland Exhibition Center
         </div>
@@ -564,29 +616,35 @@ Object {
       >
         <div
           class="content content--layout content--layout-0"
+          data-testid="content--layout"
         >
           <img
             alt="Some image"
             class="content__img"
+            data-testid="content__img"
             src="test-file-stub"
           />
           <h3
             class="content__title"
+            data-testid="content__title"
           >
             found
           </h3>
           <p
             class="content__author"
+            data-testid="content__author"
           >
             Jane Westhall
           </p>
           <p
             class="content__desc"
+            data-testid="content__desc"
           >
             Lost or found? That's the question today.
           </p>
           <a
             class="content__link"
+            data-testid="content__link"
             href="#"
           >
             Discover
@@ -598,29 +656,35 @@ Object {
       >
         <div
           class="content content--layout content--layout-1"
+          data-testid="content--layout"
         >
           <img
             alt="Some image"
             class="content__img"
+            data-testid="content__img"
             src="test-file-stub"
           />
           <h3
             class="content__title"
+            data-testid="content__title"
           >
             bunch
           </h3>
           <p
             class="content__author"
+            data-testid="content__author"
           >
             Nikimo Westlane
           </p>
           <p
             class="content__desc"
+            data-testid="content__desc"
           >
             The neverending quest, once and forever.
           </p>
           <a
             class="content__link"
+            data-testid="content__link"
             href="#"
           >
             Discover
@@ -632,29 +696,35 @@ Object {
       >
         <div
           class="content content--layout content--layout-2"
+          data-testid="content--layout"
         >
           <img
             alt="Some image"
             class="content__img"
+            data-testid="content__img"
             src="test-file-stub"
           />
           <h3
             class="content__title"
+            data-testid="content__title"
           >
             revert
           </h3>
           <p
             class="content__author"
+            data-testid="content__author"
           >
             Gregory Mourisha
           </p>
           <p
             class="content__desc"
+            data-testid="content__desc"
           >
             Finding the heart when paradise is lost.
           </p>
           <a
             class="content__link"
+            data-testid="content__link"
             href="#"
           >
             Discover
@@ -666,29 +736,35 @@ Object {
       >
         <div
           class="content content--layout content--layout-3"
+          data-testid="content--layout"
         >
           <img
             alt="Some image"
             class="content__img"
+            data-testid="content__img"
             src="test-file-stub"
           />
           <h3
             class="content__title"
+            data-testid="content__title"
           >
             east
           </h3>
           <p
             class="content__author"
+            data-testid="content__author"
           >
             Walter Mastricht
           </p>
           <p
             class="content__desc"
+            data-testid="content__desc"
           >
             The outer bounds of the world, from within.
           </p>
           <a
             class="content__link"
+            data-testid="content__link"
             href="#"
           >
             Discover
@@ -700,29 +776,35 @@ Object {
       >
         <div
           class="content content--layout content--layout-4"
+          data-testid="content--layout"
         >
           <img
             alt="Some image"
             class="content__img"
+            data-testid="content__img"
             src="test-file-stub"
           />
           <h3
             class="content__title"
+            data-testid="content__title"
           >
             frank
           </h3>
           <p
             class="content__author"
+            data-testid="content__author"
           >
             Frank Cherry
           </p>
           <p
             class="content__desc"
+            data-testid="content__desc"
           >
             Frank's work and nothing more.
           </p>
           <a
             class="content__link"
+            data-testid="content__link"
             href="#"
           >
             Discover

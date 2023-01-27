@@ -99,7 +99,7 @@ const MorphWrapper = () => {
   }, []);
 
   return (
-    <div className="morph-wrap">
+    <div className="morph-wrap" data-testid="morph-wrap">
       <motion.svg
         className="morph"
         width="1400"

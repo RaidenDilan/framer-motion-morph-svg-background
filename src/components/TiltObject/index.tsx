@@ -1,17 +1,16 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useRef, MouseEvent } from 'react';
 import { motion, useAnimationControls } from 'framer-motion';
-import { MovementProps, TiltObjectProps, TiltObjectState } from './TiltObject';
-import extend from '../../utils/extend';
+import { TiltObjectProps, TiltObjectState } from './TiltObject';
 import getMousePos from '../../utils/getMousePos';
 
 const TiltObject = (props: TiltObjectProps) => {
-  const [state, setState] = useState<TiltObjectState>({
+  const state: TiltObjectState = {
     options: {
       movement: {
         img: {
           translation: {
-            x: -10,
-            y: -10,
+            x: -40,
+            y: -40,
           },
         },
         title: {
@@ -22,7 +21,7 @@ const TiltObject = (props: TiltObjectProps) => {
         },
       },
     },
-  });
+  };
 
   const imgControls = useAnimationControls();
   const titleControls = useAnimationControls();
@@ -31,38 +30,20 @@ const TiltObject = (props: TiltObjectProps) => {
   const imgRef = useRef<HTMLImageElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);
 
-  useEffect(() => {
-    setState(prev => ({
-      ...prev,
-      options: extend({}, state.options) as MovementProps,
-    }));
-    extend(state.options, props.options as MovementProps);
-
-    elemRef.current?.addEventListener('mousemove', mouseMoveFn);
-    elemRef.current?.addEventListener('mouseleave', mouseLeaveFn);
-    elemRef.current?.addEventListener('mouseenter', mouseEnterFn);
-
-    return () => {
-      elemRef.current?.removeEventListener('mousemove', mouseMoveFn);
-      elemRef.current?.removeEventListener('mouseleave', mouseLeaveFn);
-      elemRef.current?.removeEventListener('mouseenter', mouseEnterFn);
-    };
-  }, []);
-
-  const mouseEnterFn = (e: MouseEvent) => {
+  const mouseEnter = (e: MouseEvent) => {
     imgControls.stop();
     titleControls.stop();
   };
 
-  const mouseMoveFn = (e: MouseEvent) => {
+  const mouseMove = (e: MouseEvent) => {
     requestAnimationFrame(() => layout(e));
   };
 
-  const mouseLeaveFn = (e: MouseEvent) => {
+  const mouseLeave = (e: MouseEvent) => {
     requestAnimationFrame(() => {
       imgControls.start({
         transition: {
-          duration: 1500,
+          duration: 1.5,
           easing: 'easeOutElastic',
           elasticity: 400,
         },
@@ -71,7 +52,7 @@ const TiltObject = (props: TiltObjectProps) => {
       });
       titleControls.start({
         transition: {
-          duration: 1500,
+          duration: 1.5,
           easing: 'easeOutElastic',
           elasticity: 400,
         },
@@ -89,35 +70,31 @@ const TiltObject = (props: TiltObjectProps) => {
       left: document.body.scrollLeft + document.documentElement.scrollLeft,
       top: document.body.scrollTop + document.documentElement.scrollTop,
     };
-
     const bounds = elemRef.current?.getBoundingClientRect() as DOMRect;
-    // Mouse position relative to the main element (DOM.el).
-    const relmousepos = {
+    // Mouse position relative to the main element (e.currnetTarget).
+    const relMousePos = {
       x: mousepos.x - bounds.left - docScrolls.left,
       y: mousepos.y - bounds.top - docScrolls.top,
     };
-
     // Movement settings for the animatable elements.
     const t = {
       img: state.options.movement.img.translation,
       title: state.options.movement.title.translation,
     };
-
     const transforms = {
       img: {
-        x: ((-1 * t.img.x - t.img.x) / bounds.width) * relmousepos.x + t.img.x,
-        y: ((-1 * t.img.y - t.img.y) / bounds.height) * relmousepos.y + t.img.y,
+        x: ((-1 * t.img.x - t.img.x) / bounds.width) * relMousePos.x + t.img.x,
+        y: ((-1 * t.img.y - t.img.y) / bounds.height) * relMousePos.y + t.img.y,
       },
       title: {
         x:
-          ((-1 * t.title.x - t.title.x) / bounds.width) * relmousepos.x +
+          ((-1 * t.title.x - t.title.x) / bounds.width) * relMousePos.x +
           t.title.x,
         y:
-          ((-1 * t.title.y - t.title.y) / bounds.height) * relmousepos.y +
+          ((-1 * t.title.y - t.title.y) / bounds.height) * relMousePos.y +
           t.title.y,
       },
     };
-
     if (titleRef.current) {
       titleRef.current.style.transform =
         'translateX(' +
@@ -141,6 +118,10 @@ const TiltObject = (props: TiltObjectProps) => {
       <div
         ref={elemRef}
         className={`content content--layout content--layout-${props.content.index}`}
+        onMouseMove={mouseMove}
+        onMouseEnter={mouseEnter}
+        onMouseLeave={mouseLeave}
+        data-testid="content--layout"
       >
         <motion.img
           ref={imgRef}
@@ -148,17 +129,23 @@ const TiltObject = (props: TiltObjectProps) => {
           src={props.content.imageSrc}
           alt="Some image"
           animate={imgControls}
+          data-testid="content__img"
         />
         <motion.h3
           ref={titleRef}
           className="content__title"
           animate={titleControls}
+          data-testid="content__title"
         >
           {props.content.title}
         </motion.h3>
-        <p className="content__author">{props.content.content__author}</p>
-        <p className="content__desc">{props.content.content__desc}</p>
-        <a href="#" className="content__link">
+        <p className="content__author" data-testid="content__author">
+          {props.content.content__author}
+        </p>
+        <p className="content__desc" data-testid="content__desc">
+          {props.content.content__desc}
+        </p>
+        <a href="#" className="content__link" data-testid="content__link">
           Discover
         </a>
       </div>
