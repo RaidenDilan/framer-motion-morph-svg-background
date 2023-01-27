@@ -3,7 +3,7 @@ import './Hidden.scss';
 
 const Hidden = () => {
   return (
-    <svg className="Hidden">
+    <svg className="Hidden" data-testid="Hidden">
       <symbol id="icon-arrow" viewBox="0 0 24 24">
         <title>arrow</title>
         <polygon points="6.3,12.8 20.9,12.8 20.9,11.2 6.3,11.2 10.2,7.2 9,6 3.1,12 9,18 10.2,16.8 " />
