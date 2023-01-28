@@ -20,7 +20,7 @@ describe(__filename, () => {
   });
 
   it('it should return correct mouse cursor position', () => {
-    const e = { ...event, pageX: -40, pageY: -40, clientX: -40, clientY: -40 };
+    const e = { ...event, pageX: -40, pageY: -40, clientX: -30, clientY: -30 };
     expect(getMousePos(e)).toBeDefined();
     expect(getMousePos(e)).toEqual({ x: -40, y: -40 });
   });

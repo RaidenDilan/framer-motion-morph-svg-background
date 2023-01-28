@@ -1,7 +1,7 @@
 import React from 'react';
 import './Main.scss';
 
-import { CONTENTS } from './Main';
+import { tiltObjContents } from './Main';
 import Hidden from '../../components/Hidden';
 import Content from '../../components/Content';
 import TiltObject from '../../components/TiltObject';
@@ -13,7 +13,7 @@ const Main = () => {
       <Hidden />
       <MorphWrapper />
       <Content />
-      {Array.from(CONTENTS).map((el, i) => (
+      {Array.from(tiltObjContents).map((el, i) => (
         <TiltObject key={i} content={{ ...el, index: i }} />
       ))}
     </div>

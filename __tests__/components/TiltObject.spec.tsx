@@ -2,19 +2,19 @@ import React from 'react';
 import { cleanup, fireEvent, render } from '@testing-library/react';
 import TiltObject from '../../src/components/TiltObject';
 import { act } from 'react-test-renderer';
-import { CONTENTS } from '../../src/screens/Main/Main';
+import { tiltObjContents } from '../../src/screens/Main/Main';
 
 describe(__filename, () => {
   afterEach(cleanup);
 
   it('should have variables defined', () => {
     const { getByTestId } = render(
-      <TiltObject content={{ ...CONTENTS[0], index: 1 }} />,
+      <TiltObject content={{ ...tiltObjContents[0], index: 1 }} />,
     );
     expect(getByTestId('content__title')).toBeDefined();
     expect(getByTestId('content__img')).toHaveAttribute(
       'src',
-      CONTENTS[0].imageSrc,
+      tiltObjContents[0].imageSrc,
     );
     expect(getByTestId('content__author')).toBeDefined();
     expect(getByTestId('content__desc')).toBeDefined();
@@ -24,8 +24,8 @@ describe(__filename, () => {
   });
 
   it('should change on mouseover', () => {
-    const { getByTestId, queryAllByText } = render(
-      <TiltObject content={{ ...CONTENTS[0], index: 1 }} />,
+    const { getByTestId } = render(
+      <TiltObject content={{ ...tiltObjContents[0], index: 1 }} />,
     );
     fireEvent.mouseOver(getByTestId('content--layout'));
     fireEvent.mouseLeave(getByTestId('content--layout'));
@@ -33,7 +33,7 @@ describe(__filename, () => {
 
   it.skip('it should fire mouseEnter/mouseOver/mouseLeave events', async () => {
     const { container, getByTestId } = render(
-      <TiltObject content={{ ...CONTENTS[0], index: 1 }} />,
+      <TiltObject content={{ ...tiltObjContents[0], index: 1 }} />,
     );
     const img = getByTestId('content__img');
     const style = getComputedStyle(img);
