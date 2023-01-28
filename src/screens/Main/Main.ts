@@ -11,7 +11,7 @@ export interface Content {
   content__desc: string;
 }
 
-export const CONTENTS: Content[] = [
+export const tiltObjContents: Content[] = [
   {
     imageSrc: img3,
     title: 'found',
