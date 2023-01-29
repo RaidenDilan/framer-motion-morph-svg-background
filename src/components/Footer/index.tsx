@@ -1,5 +1,4 @@
 import React from 'react';
-import './Footer.scss';
 import ItemRevealerImg from '../../assets/images/ItemRevealer.jpg';
 import ElasticSVGElementsImg from '../../assets/images/ElasticSVGElements.jpg';
 
